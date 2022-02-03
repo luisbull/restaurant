@@ -7,27 +7,34 @@ import HolaMundo from './components/HolaMundo';
 import AdiosMundo from './components/AdiosMundo';
 import HelloWorld from './components/HelloWorld';
 import UserObject from './components/UserObject';
+import FnHello from './components/FunctionHello';
 
 function App() {
 
   const userName = "Tom";
   const userAge = 36;
 
+  //object
   const userObject = {
-    name: "John",
+    // name: "John",
     age: 40,
     color: "red",
+  }
 
+  //function
+  const saludarFn = name => {
+    console.log("Hola " + name );
   }
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <HolaMundo nombre="Luis Toro" lugar="Boyaca" />
+        {/* <HolaMundo nombre="Luis Toro" lugar="Boyaca" />
         <AdiosMundo name ="Alfredo Espitia" place="Colombia" />
         <HelloWorld name={userName} age={userAge}/>
-        <UserObject userInfo={userObject} />
+        <UserObject userInfo={userObject} /> */}
+        <FnHello userInfo={userObject} saludarFn={saludarFn}/>
         <a
           className="App-link"
           href="https://reactjs.org"
