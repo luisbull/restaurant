@@ -5,14 +5,29 @@ import './App.css';
 // import HolaMundo, { AdiosMundo } from './components/HolaMundo';
 import HolaMundo from './components/HolaMundo';
 import AdiosMundo from './components/AdiosMundo';
+import HelloWorld from './components/HelloWorld';
+import UserObject from './components/UserObject';
 
 function App() {
+
+  const userName = "Tom";
+  const userAge = 36;
+
+  const userObject = {
+    name: "John",
+    age: 40,
+    color: "red",
+
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <HolaMundo/>
-        <AdiosMundo/>
+        <HolaMundo nombre="Luis Toro" lugar="Boyaca" />
+        <AdiosMundo name ="Alfredo Espitia" place="Colombia" />
+        <HelloWorld name={userName} age={userAge}/>
+        <UserObject userInfo={userObject} />
         <a
           className="App-link"
           href="https://reactjs.org"

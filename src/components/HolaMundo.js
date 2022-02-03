@@ -1,10 +1,10 @@
 import react from "react";
 
-export default function HolaMundo(){
+export default function HolaMundo(props){
+    console.log(props);
     return (
         <div>
-            <h1>Hola Mundo</h1>
-            <h2>Luis Toro</h2>
+            <p>Hola {props.nombre} eres de {props.lugar}</p>
         </div>
     );
 }
