@@ -1,7 +1,7 @@
 import react from "react";
 
 export default function UserObject(props) {
-    console.log(props.userInfo);
+    // console.log(props.userInfo);
     return (
         <div>
             <p>Hello {props.userInfo.name}. 

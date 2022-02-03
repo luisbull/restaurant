@@ -9,6 +9,8 @@ import HelloWorld from './components/HelloWorld';
 import UserObject from './components/UserObject';
 import FnHello from './components/FunctionHello';
 
+import react, {useState} from "react";
+
 function App() {
 
   const userName = "Tom";
@@ -23,8 +25,20 @@ function App() {
 
   //function
   const saludarFn = name => {
-    console.log("Hola " + name );
+    console.log(`Hola ${name}` );
   }
+
+  const [stateCar, setStateCar] = useState(false);
+
+  const prenderApagar = () => {
+    setStateCar(!stateCar);
+    // setStateCar(preValue => !preValue); // when we pass it to other components that don't have access to the setCar
+    setContar(contar + 1);
+  }
+
+  const [contar, setContar] = useState(0);
+
+  
 
   return (
     <div className="App">
@@ -35,14 +49,10 @@ function App() {
         <HelloWorld name={userName} age={userAge}/>
         <UserObject userInfo={userObject} /> */}
         <FnHello userInfo={userObject} saludarFn={saludarFn}/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h4>Clicks: {contar}</h4> 
+        <p>El carro esta {stateCar ? "Prendido" : "Apagado"} </p>
+        <button onClick={prenderApagar}>prender / apagar</button>
+
       </header>
     </div>
   );

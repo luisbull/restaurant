@@ -1,7 +1,7 @@
 import react from "react";
 
 export default function HolaMundo(props){
-    console.log(props);
+    // console.log(props);
     return (
         <div>
             <p>Hola {props.nombre} eres de {props.lugar}</p>
